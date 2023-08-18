@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Attribute } from '../../models/attribute';
 
 @Component({
   selector: 'character-sheet-attribute',
@@ -6,6 +7,6 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./character-sheet-attribute.component.scss']
 })
 export class CharacterSheetAttributeComponent {
-  @Input () name: string = '';
+  @Input () attribute: Attribute;
 
 }

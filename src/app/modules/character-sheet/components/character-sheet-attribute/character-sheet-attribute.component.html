@@ -1,1 +1,4 @@
-<div class="inline-block" [matTooltip]="name">{{ name.slice(0,3) }}</div>
+<div class="text-center">
+    <div class="border p-2 w-12  mb-4 mr-2 bg-lime-100 inline-block" [matTooltip]="attribute.name">{{ attribute.name.slice(0,3) }}</div>
+    <div class="border p-2 w-12  inline-block">{{ attribute.value.current }}</div>
+</div>
