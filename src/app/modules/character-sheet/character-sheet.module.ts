@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { CharacterSheetRoutingModule } from './character-sheet-routing.module';
-import { CharacterSheetContainerComponent } from './components/character-sheet-container/character-sheet-container.component';
-import { CharacterSheetAttributesComponent } from './components/character-sheet-attributes/character-sheet-attributes.component';
-import { CharacterSheetAttributeComponent } from './components/character-sheet-attribute/character-sheet-attribute.component';
+import { CharacterSheetContainerComponent } from './components/container/character-sheet-container.component';
+import { CharacterSheetAttributesComponent } from './components/attributes/character-sheet-attributes.component';
+import { CharacterSheetBasicInfoComponent } from './components/basic-info/character-sheet-basic-info.component';
 
 @NgModule({
   imports: [
@@ -14,12 +14,12 @@ import { CharacterSheetAttributeComponent } from './components/character-sheet-a
   declarations: [
     CharacterSheetContainerComponent,
     CharacterSheetAttributesComponent,
-    CharacterSheetAttributeComponent
+    CharacterSheetBasicInfoComponent
   ],
   exports: [
     CharacterSheetContainerComponent,
     CharacterSheetAttributesComponent,
-    CharacterSheetAttributeComponent
+    CharacterSheetBasicInfoComponent
   ]
 })
 export class CharacterSheetModule { }
