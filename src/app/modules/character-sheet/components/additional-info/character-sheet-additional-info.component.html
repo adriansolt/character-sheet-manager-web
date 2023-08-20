@@ -3,7 +3,7 @@
     <mat-form-field>
       <mat-label>Complexión</mat-label>
       <mat-select>
-        <mat-option *ngFor="let complexion of complexiones">
+        <mat-option *ngFor="let complexion of complexiones" [value]="complexiones">
           {{ complexion }}
         </mat-option>
       </mat-select>
@@ -13,7 +13,7 @@
     <mat-form-field>
       <mat-label>Cultura</mat-label>
       <mat-select>
-        <mat-option *ngFor="let cultura of culturas">
+        <mat-option *ngFor="let cultura of culturas" [value]="culturas">
           {{ cultura }}
         </mat-option>
       </mat-select>
@@ -23,7 +23,7 @@
     <mat-form-field>
       <mat-label>Profesión</mat-label>
       <mat-select>
-        <mat-option *ngFor="let profesion of profesiones">
+        <mat-option *ngFor="let profesion of profesiones" [value]="profesiones">
           {{ profesion }}
         </mat-option>
       </mat-select>
@@ -33,7 +33,7 @@
     <mat-form-field>
       <mat-label>Clase social</mat-label>
       <mat-select>
-        <mat-option *ngFor="let clase_social of clases_sociales">
+        <mat-option *ngFor="let clase_social of clases_sociales" [value]="clases_sociales">
           {{ clase_social }}
         </mat-option>
       </mat-select>
