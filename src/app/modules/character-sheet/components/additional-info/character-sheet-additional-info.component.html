@@ -1,0 +1,42 @@
+<div class="mat-elevation-z8 p-5 mt-7 bg-slate-200">
+  <div>
+    <mat-form-field>
+      <mat-label>Complexión</mat-label>
+      <mat-select>
+        <mat-option *ngFor="let complexion of complexiones">
+          {{ complexion }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field>
+      <mat-label>Cultura</mat-label>
+      <mat-select>
+        <mat-option *ngFor="let cultura of culturas">
+          {{ cultura }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field>
+      <mat-label>Profesión</mat-label>
+      <mat-select>
+        <mat-option *ngFor="let profesion of profesiones">
+          {{ profesion }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field>
+      <mat-label>Clase social</mat-label>
+      <mat-select>
+        <mat-option *ngFor="let clase_social of clases_sociales">
+          {{ clase_social }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+</div>

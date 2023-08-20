@@ -3,7 +3,7 @@ import { Characteristic } from '../../models/characteristic';
 
 const CHARACTERISTICS_LIST: Characteristic[] = [
   {
-    name: 'Puntos de acción',
+    name: 'Fuerza',
     value: {
       initial: 10,
       current: 10,
@@ -12,7 +12,7 @@ const CHARACTERISTICS_LIST: Characteristic[] = [
     },
   },
   {
-    name: 'Modif. Daño',
+    name: 'Constitución',
     value: {
       initial: 10,
       current: 10,
@@ -21,7 +21,7 @@ const CHARACTERISTICS_LIST: Characteristic[] = [
     },
   },
   {
-    name: 'Modif. exp.',
+    name: 'Tamaño',
     value: {
       initial: 10,
       current: 10,
@@ -30,7 +30,7 @@ const CHARACTERISTICS_LIST: Characteristic[] = [
     },
   },
   {
-    name: 'Ritmo curación',
+    name: 'Destreza',
     value: {
       initial: 10,
       current: 10,
@@ -39,7 +39,7 @@ const CHARACTERISTICS_LIST: Characteristic[] = [
     },
   },
   {
-    name: 'Bonif. iniciativa',
+    name: 'Inteligencia',
     value: {
       initial: 10,
       current: 10,
@@ -48,7 +48,7 @@ const CHARACTERISTICS_LIST: Characteristic[] = [
     },
   },
   {
-    name: 'Puntos de suerte',
+    name: 'Poder',
     value: {
       initial: 10,
       current: 10,
@@ -57,7 +57,7 @@ const CHARACTERISTICS_LIST: Characteristic[] = [
     },
   },
   {
-    name: 'Tasa de movimiento (m)',
+    name: 'Carisma',
     value: {
       initial: 10,
       current: 10,
@@ -68,11 +68,11 @@ const CHARACTERISTICS_LIST: Characteristic[] = [
 ];
 
 @Component({
-  selector: 'character-sheet-attributes',
-  templateUrl: './character-sheet-attributes.component.html',
-  styleUrls: ['./character-sheet-attributes.component.scss']
+  selector: 'character-sheet-characteristics',
+  templateUrl: './character-sheet-characteristics.component.html',
+  styleUrls: ['./character-sheet-characteristics.component.scss'],
 })
-export class CharacterSheetAttributesComponent {
+export class CharacterSheetCharacteristicsComponent {
   displayedColumns: string[] = ['characteristic', 'initial', 'current'];
   dataSource = CHARACTERISTICS_LIST;
 }

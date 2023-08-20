@@ -1,0 +1,22 @@
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <!-- Characteristic Column -->
+  <ng-container matColumnDef="characteristic">
+    <th class="bg-amber-200" mat-header-cell *matHeaderCellDef>Características</th>
+    <td class="bg-amber-200" mat-cell *matCellDef="let characteristic">{{ characteristic.name }}</td>
+  </ng-container>
+
+  <!-- Initial Column -->
+  <ng-container matColumnDef="initial">
+    <th class="bg-amber-100 text-center"  mat-header-cell *matHeaderCellDef>Inicial</th>
+    <td class="bg-amber-100 text-center" mat-cell *matCellDef="let characteristic">{{ characteristic.value.initial }}</td>
+  </ng-container>
+
+  <!-- Current Column -->
+  <ng-container matColumnDef="current">
+    <th class="bg-amber-200 text-center" mat-header-cell *matHeaderCellDef>Actual</th>
+    <td class="bg-amber-200 text-center" mat-cell *matCellDef="let characteristic">{{ characteristic.value.current }}</td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+</table>
