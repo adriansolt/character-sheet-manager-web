@@ -1,36 +1,26 @@
 <div class="m-5 p-5 border rounded bg-white">
   <mat-stepper orientation="vertical" [linear]="true" #stepper>
     <mat-step>
-      <form>
-        <ng-template matStepLabel>Datos personales del personaje</ng-template>
-        <div>
-          <mat-form-field>
-            <mat-label>Nombre</mat-label>
-            <input matInput required />
-          </mat-form-field>
-        </div>
-        <div>
-          <mat-form-field>
-            <mat-label>Edad</mat-label>
-            <input matInput required />
-          </mat-form-field>
-        </div>
-        <div>
-          <mat-form-field>
-            <mat-label>Altura</mat-label>
-            <input matInput required />
-          </mat-form-field>
-        </div>
-        <div>
-          <mat-form-field>
-            <mat-label>Peso</mat-label>
-            <input matInput required />
-          </mat-form-field>
-        </div>
-        <div>
-          <button mat-button matStepperNext>Siguiente</button>
-        </div>
-      </form>
+      <ng-template matStepLabel>Datos personales del personaje</ng-template>
+        <mat-form-field class="sm:w-1/2 sm:px-5">
+          <mat-label>Nombre</mat-label>
+          <input matInput required />
+        </mat-form-field>
+        <mat-form-field class="sm:w-1/2 sm:px-5">
+          <mat-label>Altura</mat-label>
+          <input matInput required />
+        </mat-form-field>
+        <mat-form-field class="sm:w-1/2 sm:px-5">
+          <mat-label>Edad</mat-label>
+          <input matInput required />
+        </mat-form-field>
+        <mat-form-field class="sm:w-1/2 sm:px-5">
+          <mat-label>Peso</mat-label>
+          <input matInput required />
+        </mat-form-field>
+      <div>
+        <button mat-button matStepperNext>Siguiente</button>
+      </div>
     </mat-step>
     <mat-step>
       <form>
@@ -106,36 +96,53 @@
       </form>
     </mat-step>
     <mat-step>
-      <ng-template matStepLabel>Cultura y clase social</ng-template>
-      <div class=""></div>
-      <mat-chip-listbox
-        class="px-2 inline-block w-1/2 mat-mdc-chip-set-stacked mb-2"
-      >
-        <mat-chip-option class="overflow-hidden" selected>Civilizada</mat-chip-option>
-        <mat-chip-option class="overflow-hidden">Nómada</mat-chip-option>
-        <mat-chip-option class="overflow-hidden">Bárbara</mat-chip-option>
-        <mat-chip-option class="overflow-hidden">Primitiva</mat-chip-option>
-      </mat-chip-listbox>
-      <mat-chip-listbox
-        class="px-2 inline-block w-1/2 mat-mdc-chip-set-stacked mb-2"
-      >
-        <mat-chip-option class="overflow-hidden">Governante</mat-chip-option>
-        <mat-chip-option class="overflow-hidden" selected>Hombre libre</mat-chip-option>
-        <mat-chip-option class="overflow-hidden">Esclavo</mat-chip-option>
-        <mat-chip-option class="overflow-hidden">Paria</mat-chip-option>
-      </mat-chip-listbox>
-      <div>
-        <button mat-button matStepperPrevious>Atrás</button>
-        <button mat-button matStepperNext>Siguiente</button>
-      </div>
-    </mat-step>
-    <mat-step>
-      <ng-template matStepLabel>Profesión</ng-template>
-      <mat-selection-list class="overflow-y-scroll h-60" [multiple]="false">
-        <mat-list-option *ngFor="let profesion of profesiones" [value]="profesion">
-          {{profesion}}
-        </mat-list-option>
-      </mat-selection-list>
+      <ng-template matStepLabel>Trasfondo</ng-template>
+      <mat-vertical-stepper [linear]="false">
+        <mat-step>
+          <ng-template matStepLabel>Cultura</ng-template>
+          <div class="inline-block w-full px-2">
+            <mat-chip-listbox class="mat-mdc-chip-set-stacked mb-2">
+              <mat-chip-option class="overflow-hidden" selected
+                >Civilizada</mat-chip-option
+              >
+              <mat-chip-option class="overflow-hidden">Nómada</mat-chip-option>
+              <mat-chip-option class="overflow-hidden">Bárbara</mat-chip-option>
+              <mat-chip-option class="overflow-hidden">Primitiva</mat-chip-option>
+            </mat-chip-listbox>
+          </div>
+        </mat-step>
+        <mat-step>
+          <ng-template matStepLabel>Clase social</ng-template>
+          <div class="inline-block w-full px-2">
+            <mat-chip-listbox class="mat-mdc-chip-set-stacked mb-2">
+              <mat-chip-option class="overflow-hidden" selected
+                >Governante</mat-chip-option
+              >
+              <mat-chip-option class="overflow-hidden" 
+                >Hombre libre</mat-chip-option
+              >
+              <mat-chip-option class="overflow-hidden"
+                >Esclavo</mat-chip-option
+              >
+              <mat-chip-option class="overflow-hidden"
+                >Paria</mat-chip-option
+              >
+            </mat-chip-listbox>
+          </div>
+        </mat-step>
+        <mat-step>
+          <ng-template matStepLabel>Profesión</ng-template>
+          <mat-chip-listbox class="mat-mdc-chip-set-stacked mb-2 inline-block overflow-y-scroll h-40">
+            <mat-chip-option
+              [selected]="profesion === profesiones[0]"
+              *ngFor="let profesion of profesiones"
+              class="overflow-hidden"
+              >{{ profesion }}</mat-chip-option
+            >
+          </mat-chip-listbox>
+        </mat-step>
+      
+      </mat-vertical-stepper>
       <div>
         <button mat-button matStepperPrevious>Atrás</button>
         <button mat-button matStepperNext>Siguiente</button>
