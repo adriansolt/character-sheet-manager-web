@@ -1,25 +1,36 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
+import { MatSliderModule } from '@angular/material/slider';
+import { MatStepperModule } from '@angular/material/stepper';
 import { MatTableModule } from '@angular/material/table';
 import { MatTooltipModule } from '@angular/material/tooltip';
 
+const modules = [
+  CommonModule,
+  MatTooltipModule,
+  MatTableModule,
+  MatInputModule,
+  MatSelectModule,
+  FormsModule,
+  ReactiveFormsModule,
+  MatStepperModule,
+  MatSliderModule,
+  MatFormFieldModule,
+  MatButtonModule,
+  MatCardModule,
+  MatChipsModule
+]
+
 @NgModule({
-  imports: [
-    CommonModule,
-    MatTooltipModule,
-    MatTableModule,
-    MatInputModule,
-    MatSelectModule
-  ],
+  imports: modules,
   providers: [],
-  exports: [
-    CommonModule,
-    MatTooltipModule,
-    MatTableModule,
-    MatInputModule,
-    MatSelectModule
-  ]
+  exports: modules
 })
 export class SharedModule { }

@@ -1,0 +1,102 @@
+<table mat-table [dataSource]="abilities" class="inline-block mat-elevation-z8 ">
+  <ng-container matColumnDef="name">
+    <th class="bg-amber-200" mat-header-cell *matHeaderCellDef>Habilidad</th>
+    <td class="bg-amber-200" mat-cell *matCellDef="let ability">
+      {{ ability.name }}
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="base">
+    <th class="bg-amber-100 text-center" mat-header-cell *matHeaderCellDef>
+      Base
+    </th>
+    <td class="bg-amber-100 text-center" mat-cell *matCellDef="let ability">
+      {{
+        ability.characteristic1.value.current +
+          ability.characteristic2.value.current
+      }}
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="culture">
+    <th class="bg-amber-200 text-center" mat-header-cell *matHeaderCellDef>
+      Por cultura
+    </th>
+    <td
+      class="bg-amber-200 text-center"
+      mat-cell
+      *matCellDef="let ability"
+    ></td>
+  </ng-container>
+
+  <ng-container matColumnDef="culturePoints">
+    <th class="bg-amber-200" mat-header-cell *matHeaderCellDef>P. cultura</th>
+    <td class="bg-amber-200" mat-cell *matCellDef="let ability">
+      {{ ability.culturePoints ?? "" }}
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="profession">
+    <th class="bg-amber-200 text-center" mat-header-cell *matHeaderCellDef>
+      Por profesión
+    </th>
+    <td
+      class="bg-amber-200 text-center"
+      mat-cell
+      *matCellDef="let ability"
+    ></td>
+  </ng-container>
+
+  <ng-container matColumnDef="professionPoints">
+    <th class="bg-amber-200" mat-header-cell *matHeaderCellDef>P. profesión</th>
+    <td class="bg-amber-200" mat-cell *matCellDef="let ability">
+      {{ ability.professionPoints ?? "" }}
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="agePoints">
+    <th class="bg-amber-100 text-center" mat-header-cell *matHeaderCellDef>
+      P. edad
+    </th>
+    <td class="bg-amber-100 text-center" mat-cell *matCellDef="let ability">
+      {{ ability.agePoints }}
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="experiencePoints">
+    <th class="bg-amber-200 text-center" mat-header-cell *matHeaderCellDef>
+      Tiradas exp.
+    </th>
+    <td class="bg-amber-200 text-center" mat-cell *matCellDef="let ability">
+      {{ ability.experiencePoints }}
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="fumblePoints">
+    <th class="bg-amber-200" mat-header-cell *matHeaderCellDef>Pifias</th>
+    <td class="bg-amber-200" mat-cell *matCellDef="let ability">
+      {{ ability.fumblePoints }}
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="trainingPoints">
+    <th class="bg-amber-100 text-center" mat-header-cell *matHeaderCellDef>
+      Entrenamiento
+    </th>
+    <td class="bg-amber-100 text-center" mat-cell *matCellDef="let ability">
+      {{ ability.trainingPoints }}
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="total">
+    <th class="bg-amber-200 text-center" mat-header-cell *matHeaderCellDef>
+      Final
+    </th>
+    <td class="bg-amber-200 text-center" mat-cell *matCellDef="let ability">
+      {{ getTotal(ability) }}
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+</table>

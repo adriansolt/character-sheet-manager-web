@@ -1,0 +1,145 @@
+<div class="m-5 p-5 border rounded bg-white">
+  <mat-stepper orientation="vertical" [linear]="true" #stepper>
+    <mat-step>
+      <form>
+        <ng-template matStepLabel>Datos personales del personaje</ng-template>
+        <div>
+          <mat-form-field>
+            <mat-label>Nombre</mat-label>
+            <input
+              matInput
+              placeholder="Nombre y apellidos del personaje"
+              required
+            />
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field>
+            <mat-label>Edad</mat-label>
+            <input matInput placeholder="Edad del personaje" required />
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field>
+            <mat-label>Peso</mat-label>
+            <input matInput placeholder="Edad del personaje" required />
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field>
+            <mat-label>Altura</mat-label>
+            <input matInput placeholder="Edad del personaje" required />
+          </mat-form-field>
+        </div>
+        <div>
+          <button mat-button matStepperNext>Siguiente</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step>
+      <form>
+        <ng-template matStepLabel>Atributos</ng-template>
+        <div>
+          <div>
+            <mat-label
+              >¿Cuánto peso puede levantar, qué duro puede golpear?</mat-label
+            >
+          </div>
+          <mat-slider class="w-96">
+            <input value="50" matSliderThumb #slider />
+          </mat-slider>
+        </div>
+        <div>
+          <div>
+            <mat-label
+              >¿Cómo es la salud y la resistencia del personaje?</mat-label
+            >
+          </div>
+          <mat-slider class="w-96">
+            <input value="50" matSliderThumb #slider />
+          </mat-slider>
+        </div>
+        <div>
+          <div>
+            <mat-label
+              >¿Qué nivel de agilidad, equilibrio y reflejos tiene?</mat-label
+            >
+          </div>
+          <mat-slider class="w-96">
+            <input value="50" matSliderThumb #slider />
+          </mat-slider>
+        </div>
+        <div>
+          <div>
+            <mat-label
+              >¿Cómo de buena es su habilidad para procesar
+              información?</mat-label
+            >
+          </div>
+          <mat-slider class="w-96">
+            <input value="50" matSliderThumb #slider />
+          </mat-slider>
+        </div>
+        <div>
+          <div>
+            <mat-label
+              >¿Cuánto de fuerte es su espíritu y fuerza interior?</mat-label
+            >
+          </div>
+          <mat-slider class="w-96">
+            <input value="50" matSliderThumb #slider />
+          </mat-slider>
+        </div>
+        <div>
+          <div>
+            <mat-label
+              >¿Cómo es su capacidad de atraer, cautivar e influir en los
+              demás?</mat-label
+            >
+          </div>
+          <mat-slider class="w-96">
+            <input value="50" matSliderThumb #slider />
+          </mat-slider>
+        </div>
+        <div>
+          <button mat-button matStepperPrevious>Atrás</button>
+          <button mat-button matStepperNext>Siguiente</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Cultura</ng-template>
+      <mat-chip-listbox class="mat-mdc-chip-set-stacked mb-2">
+        <mat-chip-option selected>Civilizada</mat-chip-option>
+        <mat-chip-option>Nómada</mat-chip-option>
+        <mat-chip-option>Bárbara</mat-chip-option>
+        <mat-chip-option>Primitiva</mat-chip-option>
+      </mat-chip-listbox>
+      <div>
+        <button mat-button matStepperPrevious>Atrás</button>
+        <button mat-button matStepperNext>Siguiente</button>
+      </div>
+    </mat-step>
+    <mat-step>
+        <ng-template matStepLabel>Clase social</ng-template>
+        <mat-chip-listbox class="mat-mdc-chip-set-stacked mb-2">
+          <mat-chip-option>Paria</mat-chip-option>
+          <mat-chip-option>Esclavo</mat-chip-option>
+          <mat-chip-option selected>Hombre libre</mat-chip-option>
+          <mat-chip-option>Governante</mat-chip-option>
+        </mat-chip-listbox>
+        <div>
+          <button mat-button matStepperPrevious>Atrás</button>
+          <button mat-button matStepperNext>Siguiente</button>
+        </div>
+      </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Finalizar</ng-template>
+      <p>You are now done.</p>
+      <div>
+        <button mat-button matStepperPrevious>Atrás</button>
+        <button mat-button (click)="stepper.reset()">Reiniciar</button>
+      </div>
+    </mat-step>
+  </mat-stepper>
+</div>

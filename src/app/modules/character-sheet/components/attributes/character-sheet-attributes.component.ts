@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { Characteristic } from '../../models/characteristic';
+import { Attribute } from '../../models/attribute';
 
-const CHARACTERISTICS_LIST: Characteristic[] = [
+const ATTRIBUTE_LIST: Attribute[] = [
   {
     name: 'Puntos de acción',
     value: {
@@ -73,6 +73,6 @@ const CHARACTERISTICS_LIST: Characteristic[] = [
   styleUrls: ['./character-sheet-attributes.component.scss']
 })
 export class CharacterSheetAttributesComponent {
-  displayedColumns: string[] = ['characteristic', 'initial', 'current'];
-  dataSource = CHARACTERISTICS_LIST;
+  displayedColumns: string[] = ['attribute', 'initial', 'current'];
+  dataSource = ATTRIBUTE_LIST;
 }

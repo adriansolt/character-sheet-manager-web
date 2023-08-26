@@ -1,21 +1,25 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CharacterCreatorModule } from './modules/character-creator/character-creator.module';
 import { CharacterSheetModule } from './modules/character-sheet/character-sheet.module';
-import { CharacterSheetContainerComponent } from './modules/character-sheet/components/container/character-sheet-container.component';
 
 const routes: Routes = [
   {
     path: '**',
-    redirectTo: 'character'
+    redirectTo: 'character-creator',
   },
   {
-    path: 'character',
-    loadChildren: () => CharacterSheetModule
-  }
+    path: 'character-sheet',
+    loadChildren: () => CharacterSheetModule,
+  },
+  {
+    path: 'character-creator',
+    loadChildren: () => CharacterCreatorModule,
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

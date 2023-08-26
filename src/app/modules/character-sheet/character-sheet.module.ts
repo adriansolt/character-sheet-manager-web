@@ -7,6 +7,18 @@ import { CharacterSheetCombatStylesInfoComponent } from './components/combat-sty
 import { CharacterSheetCharacteristicsComponent } from './components/characteristics/character-sheet-characteristics.component';
 import { CharacterSheetAttributesComponent } from './components/attributes/character-sheet-attributes.component';
 import { CharacterSheetAdditionalInfoComponent } from './components/additional-info/character-sheet-additional-info.component';
+import { CharacterSheetAbilitiesComponent } from './components/abilities/character-sheet-abilities.component';
+
+const components = [
+  CharacterSheetContainerComponent,
+  CharacterSheetCharacteristicsComponent,
+  CharacterSheetBasicInfoComponent,
+  CharacterSheetCombatStylesInfoComponent,
+  CharacterSheetAttributesComponent,
+  CharacterSheetAdditionalInfoComponent,
+  CharacterSheetAdditionalInfoComponent,
+  CharacterSheetAbilitiesComponent
+]
 
 @NgModule({
   imports: [
@@ -14,22 +26,7 @@ import { CharacterSheetAdditionalInfoComponent } from './components/additional-i
     CharacterSheetRoutingModule,
   ],
   providers: [],
-  declarations: [
-    CharacterSheetContainerComponent,
-    CharacterSheetCharacteristicsComponent,
-    CharacterSheetBasicInfoComponent,
-    CharacterSheetCombatStylesInfoComponent,
-    CharacterSheetAttributesComponent,
-    CharacterSheetAdditionalInfoComponent,
-    CharacterSheetAdditionalInfoComponent
-  ],
-  exports: [
-    CharacterSheetContainerComponent,
-    CharacterSheetCharacteristicsComponent,
-    CharacterSheetBasicInfoComponent,
-    CharacterSheetCombatStylesInfoComponent,
-    CharacterSheetAttributesComponent,
-    CharacterSheetAdditionalInfoComponent
-  ]
+  declarations: components,
+  exports: components
 })
 export class CharacterSheetModule { }

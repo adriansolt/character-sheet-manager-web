@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { Characteristic } from '../../models/characteristic';
+import { CHARACTERISTIC } from '../../models/characteristic';
 
-const CHARACTERISTICS_LIST: Characteristic[] = [
-  {
-    name: 'Fuerza',
+export const CHARACTERISTIC_LIST = {
+  FUE: {
+    name: CHARACTERISTIC.Fuerza,
     value: {
       initial: 10,
       current: 10,
@@ -11,8 +11,8 @@ const CHARACTERISTICS_LIST: Characteristic[] = [
       max: 18,
     },
   },
-  {
-    name: 'Constitución',
+  CON: {
+    name: CHARACTERISTIC.Constitucion,
     value: {
       initial: 10,
       current: 10,
@@ -20,8 +20,8 @@ const CHARACTERISTICS_LIST: Characteristic[] = [
       max: 18,
     },
   },
-  {
-    name: 'Tamaño',
+  TAM: {
+    name: CHARACTERISTIC.Tamano,
     value: {
       initial: 10,
       current: 10,
@@ -29,8 +29,8 @@ const CHARACTERISTICS_LIST: Characteristic[] = [
       max: 18,
     },
   },
-  {
-    name: 'Destreza',
+  DES: {
+    name: CHARACTERISTIC.Destreza,
     value: {
       initial: 10,
       current: 10,
@@ -38,8 +38,8 @@ const CHARACTERISTICS_LIST: Characteristic[] = [
       max: 18,
     },
   },
-  {
-    name: 'Inteligencia',
+  INT: {
+    name: CHARACTERISTIC.Inteligencia,
     value: {
       initial: 10,
       current: 10,
@@ -47,8 +47,8 @@ const CHARACTERISTICS_LIST: Characteristic[] = [
       max: 18,
     },
   },
-  {
-    name: 'Poder',
+  POD: {
+    name: CHARACTERISTIC.Poder,
     value: {
       initial: 10,
       current: 10,
@@ -56,8 +56,8 @@ const CHARACTERISTICS_LIST: Characteristic[] = [
       max: 18,
     },
   },
-  {
-    name: 'Carisma',
+  CAR: {
+    name: CHARACTERISTIC.Carisma,
     value: {
       initial: 10,
       current: 10,
@@ -65,7 +65,8 @@ const CHARACTERISTICS_LIST: Characteristic[] = [
       max: 18,
     },
   },
-];
+
+}
 
 @Component({
   selector: 'character-sheet-characteristics',
@@ -74,5 +75,5 @@ const CHARACTERISTICS_LIST: Characteristic[] = [
 })
 export class CharacterSheetCharacteristicsComponent {
   displayedColumns: string[] = ['characteristic', 'initial', 'current'];
-  dataSource = CHARACTERISTICS_LIST;
+  dataSource = Object.values(CHARACTERISTIC_LIST);
 }
