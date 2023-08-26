@@ -11,7 +11,7 @@ export enum CULTURA {
     Primitiv = 'Primitiva'
 }
 
-export enum PROFESIÓN {
+export enum PROFESION {
     Acompañante = 'Acompañante',
     AdAnimales = 'Ad. animales',
     Agente = 'Agente',
