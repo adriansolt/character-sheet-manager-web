@@ -1,5 +1,5 @@
 export interface Attribute {
-    name: string;
+    nombre: string;
     value: Value;
 }
 

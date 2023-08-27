@@ -2,92 +2,298 @@
   <mat-stepper orientation="vertical" [linear]="true" #stepper>
     <mat-step>
       <ng-template matStepLabel>Datos personales del personaje</ng-template>
-        <mat-form-field class="sm:w-1/2 sm:px-5">
-          <mat-label>Nombre</mat-label>
-          <input matInput required />
-        </mat-form-field>
-        <mat-form-field class="sm:w-1/2 sm:px-5">
-          <mat-label>Altura</mat-label>
-          <input matInput required />
-        </mat-form-field>
-        <mat-form-field class="sm:w-1/2 sm:px-5">
-          <mat-label>Edad</mat-label>
-          <input matInput required />
-        </mat-form-field>
-        <mat-form-field class="sm:w-1/2 sm:px-5">
-          <mat-label>Peso</mat-label>
-          <input matInput required />
-        </mat-form-field>
+      <mat-form-field class="sm:w-1/2 sm:px-5">
+        <mat-label>Nombre</mat-label>
+        <input [(ngModel)]="nombre" matInput required />
+        <button
+          *ngIf="nombre"
+          matSuffix
+          mat-icon-button
+          aria-label="Clear"
+          (click)="nombre = ''"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+      <mat-form-field class="sm:w-1/2 sm:px-5">
+        <mat-label>Altura (cm)</mat-label>
+        <input [(ngModel)]="altura" matInput required type="number" />
+        <button
+          *ngIf="altura"
+          matSuffix
+          mat-icon-button
+          aria-label="Clear"
+          (click)="altura = ''"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+      <mat-form-field class="sm:w-1/2 sm:px-5">
+        <mat-label>Edad (años)</mat-label>
+        <input [(ngModel)]="edad" matInput required type="number" />
+        <button
+          *ngIf="edad"
+          matSuffix
+          mat-icon-button
+          aria-label="Clear"
+          (click)="edad = ''"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+      <mat-form-field class="sm:w-1/2 sm:px-5">
+        <mat-label>Peso (kg)</mat-label>
+        <input [(ngModel)]="peso" matInput required type="number" />
+        <button
+          *ngIf="peso"
+          matSuffix
+          mat-icon-button
+          aria-label="Clear"
+          (click)="peso = ''"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
       <div>
         <button mat-button matStepperNext>Siguiente</button>
       </div>
     </mat-step>
     <mat-step>
+      <ng-template matStepLabel>Atributos</ng-template>
+      <div class="w-full sm:w-1/2 sm:pr-5 inline-block">
+        <div>
+          <mat-label
+            >¿Cuánto peso puede levantar, qué duro puede golpear?</mat-label
+          >
+        </div>
+        <div>
+          <mat-slider class="m-0 w-full">
+            <input value="50" matSliderThumb #slider />
+          </mat-slider>
+        </div>
+      </div>
+      <div class="w-full sm:w-1/2 sm:pl-5 inline-block">
+        <div>
+          <mat-label
+            >¿Cómo es la salud y la resistencia del personaje?</mat-label
+          >
+        </div>
+        <mat-slider class="m-0 w-full">
+          <input value="50" matSliderThumb #slider />
+        </mat-slider>
+      </div>
+      <div class="w-full sm:w-1/2 sm:pr-5 inline-block">
+        <div>
+          <mat-label
+            >¿Qué nivel de agilidad, equilibrio y reflejos tiene?</mat-label
+          >
+        </div>
+        <mat-slider class="m-0 w-full">
+          <input value="50" matSliderThumb #slider />
+        </mat-slider>
+      </div>
+      <div class="w-full sm:w-1/2 sm:pl-5 inline-block">
+        <div>
+          <mat-label
+            >¿Cómo de buena es su habilidad para procesar
+            información?</mat-label
+          >
+        </div>
+        <mat-slider class="m-0 w-full">
+          <input value="50" matSliderThumb #slider />
+        </mat-slider>
+      </div>
+      <div class="w-full sm:w-1/2 sm:pr-5 inline-block">
+        <div>
+          <mat-label
+            >¿Cuánto de fuerte es su espíritu y fuerza interior?</mat-label
+          >
+        </div>
+        <mat-slider class="m-0 w-full">
+          <input value="50" matSliderThumb #slider />
+        </mat-slider>
+      </div>
+      <div class="w-full sm:w-1/2 sm:pl-5 inline-block">
+        <div>
+          <mat-label
+            >¿Cómo es su capacidad de atraer, cautivar e influir en los
+            demás?</mat-label
+          >
+        </div>
+        <mat-slider class="m-0 w-full">
+          <input value="50" matSliderThumb #slider />
+        </mat-slider>
+      </div>
+      <div>
+        <button mat-button matStepperPrevious>Atrás</button>
+        <button mat-button matStepperNext>Siguiente</button>
+      </div>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Trasfondo</ng-template>
+      <div class="sm:w-81 inline-block mt-2">
+        <div class="text-base">Cultura</div>
+        <div>
+          <mat-chip-listbox
+            [(ngModel)]="cultura"
+            class="mat-mdc-chip-set-stacked mb-2"
+          >
+            <mat-chip-option
+              *ngFor="let c of culturas; let i = index"
+              class="overflow-hidden"
+              [selected]="i == 0"
+              [value]="c"
+              >{{ c }}
+              <mat-icon
+                (click)="openDialog($event, c)"
+                class="absolute scale-90 right-2 top-1"
+                >info</mat-icon
+              ></mat-chip-option
+            >
+          </mat-chip-listbox>
+        </div>
+      </div>
+      <div class="sm:w-81 mt-2 inline-block">
+        <div class="text-base sm:ml-2">Clase social</div>
+        <div>
+          <mat-chip-listbox class="mat-mdc-chip-set-stacked mb-2 sm:pl-2">
+            <mat-chip-option
+              *ngFor="
+                let claseSocial of clasesSocialesPorCultura();
+                let i = index
+              "
+              class="overflow-hidden"
+              [selected]="i == 0"
+              [value]="claseSocial"
+              >{{ claseSocial }}
+              <mat-icon
+                class="absolute scale-90 right-2 top-1"
+                (click)="openDialog($event, claseSocial)"
+                >info</mat-icon
+              ></mat-chip-option
+            >
+          </mat-chip-listbox>
+        </div>
+      </div>
+      <div class="inline-block mt-2">
+        <div class="text-base">Profesión</div>
+        <div class="inline-block w-full">
+          <mat-chip-listbox
+            class="inline-block mat-mdc-chip-set-stacked mb-2 h-40 sm:h-auto overflow-y-scroll sm:overflow-y-auto"
+          >
+            <mat-chip-option
+              *ngFor="let profesion of profesiones; let i = index"
+              [selected]="i == 0"
+              [value]="profesion"
+              class="inline-block overflow-hidden sm:w-40"
+              >{{ profesion }}
+              <mat-icon
+                class="absolute scale-90 right-2 top-1"
+                (click)="openDialog($event, profesion)"
+                >info</mat-icon
+              ></mat-chip-option
+            >
+          </mat-chip-listbox>
+        </div>
+      </div>
+      <div>
+        <button mat-button matStepperPrevious>Atrás</button>
+        <button mat-button matStepperNext>Siguiente</button>
+      </div>
+    </mat-step>
+    <mat-step>
       <form>
-        <ng-template matStepLabel>Atributos</ng-template>
+        <ng-template matStepLabel>Habilidades</ng-template>
         <div>
-          <div>
-            <mat-label
-              >¿Cuánto peso puede levantar, qué duro puede golpear?</mat-label
+          Debido a la cultura
+          <span class="font-semibold">{{ cultura | lowercase }}</span
+          >, hay ciertas habilidades cotidianas que ha podido o no desarrollar
+          más que otra cultura. Además, hay otras habilidades más especializadas
+          que puede que en otras culturas ni se conozcan. Añade hasta 3 puntos
+          de desarrollo en las habilidades que tu personaje ha trabajado más.
+          Ten en cuenta que dentro de cada cultura, hay distintos tipos de
+          costumbres. Asi que algunas habilidades dejarán de estar disponibles
+          una vez inviertas en otras.
+        </div>
+        <div class="inline-block align-top">
+          <div
+            *ngFor="
+              let habilidad of habilidadesBasicas
+                | cultureAbilitiesWithoutChoices : cultura
+            "
+          >
+            <mat-icon
+              (click)="openDialog($event, habilidad.nombre)"
+              class="absolute scale-90"
+              >info</mat-icon
             >
-          </div>
-          <div>
-            <mat-slider class="w-full">
-              <input value="50" matSliderThumb #slider />
-            </mat-slider>
+            <label>{{ habilidad.nombre }}</label>
+            <mat-radio-group disabled>
+              <mat-radio-button value="1"></mat-radio-button>
+              <mat-radio-button value="2"></mat-radio-button>
+              <mat-radio-button value="3"></mat-radio-button>
+            </mat-radio-group>
           </div>
         </div>
-        <div>
-          <div>
-            <mat-label
-              >¿Cómo es la salud y la resistencia del personaje?</mat-label
-            >
+        <!-- <div
+          *ngIf="
+            (habilidadesBasicas | cultureAbilities1Choices : cultura).length > 0
+          "
+          class="inline-block w-1/2"
+        >
+          <div
+            *ngFor="
+              let habilidad of habilidadesBasicas
+                | cultureAbilities1Choices : cultura
+            "
+          >
+            {{ habilidad.nombre }}
+            <mat-radio-group>
+              <mat-radio-button value="1"></mat-radio-button>
+              <mat-radio-button value="2"></mat-radio-button>
+              <mat-radio-button value="3"></mat-radio-button>
+            </mat-radio-group>
           </div>
-          <mat-slider class="w-full">
-            <input value="50" matSliderThumb #slider />
-          </mat-slider>
         </div>
-        <div>
-          <div>
-            <mat-label
-              >¿Qué nivel de agilidad, equilibrio y reflejos tiene?</mat-label
-            >
+        <div
+          *ngIf="
+            (habilidadesBasicas | cultureAbilities2Choices : cultura).length > 0
+          "
+          class="inline-block w-1/2"
+        >
+          <div
+            *ngFor="
+              let habilidad of habilidadesBasicas
+                | cultureAbilities2Choices : cultura
+            "
+          >
+            {{ habilidad.nombre }}
+            <mat-radio-group>
+              <mat-radio-button value="1"></mat-radio-button>
+              <mat-radio-button value="2"></mat-radio-button>
+              <mat-radio-button value="3"></mat-radio-button>
+            </mat-radio-group>
           </div>
-          <mat-slider class="w-full">
-            <input value="50" matSliderThumb #slider />
-          </mat-slider>
-        </div>
-        <div>
-          <div>
-            <mat-label
-              >¿Cómo de buena es su habilidad para procesar
-              información?</mat-label
+        </div> -->
+        <div class="inline-block">
+          <div
+            *ngFor="
+              let habilidad of habilidadesProfesionales
+                | cultureAbilitiesWithoutChoices : cultura
+            "
+          >
+            <mat-icon
+              (click)="openDialog($event, habilidad.nombre)"
+              class="absolute scale-90"
+              >info</mat-icon
             >
+            {{ habilidad.nombre }}
+            <mat-radio-group>
+              <mat-radio-button value="1"></mat-radio-button>
+              <mat-radio-button value="2"></mat-radio-button>
+              <mat-radio-button value="3"></mat-radio-button>
+            </mat-radio-group>
           </div>
-          <mat-slider class="w-full">
-            <input value="50" matSliderThumb #slider />
-          </mat-slider>
-        </div>
-        <div>
-          <div>
-            <mat-label
-              >¿Cuánto de fuerte es su espíritu y fuerza interior?</mat-label
-            >
-          </div>
-          <mat-slider class="w-full">
-            <input value="50" matSliderThumb #slider />
-          </mat-slider>
-        </div>
-        <div>
-          <div>
-            <mat-label
-              >¿Cómo es su capacidad de atraer, cautivar e influir en los
-              demás?</mat-label
-            >
-          </div>
-          <mat-slider class="w-full">
-            <input value="50" matSliderThumb #slider />
-          </mat-slider>
         </div>
         <div>
           <button mat-button matStepperPrevious>Atrás</button>
@@ -95,59 +301,7 @@
         </div>
       </form>
     </mat-step>
-    <mat-step>
-      <ng-template matStepLabel>Trasfondo</ng-template>
-      <mat-vertical-stepper [linear]="false">
-        <mat-step>
-          <ng-template matStepLabel>Cultura</ng-template>
-          <div class="inline-block w-full px-2">
-            <mat-chip-listbox class="mat-mdc-chip-set-stacked mb-2">
-              <mat-chip-option class="overflow-hidden" selected
-                >Civilizada</mat-chip-option
-              >
-              <mat-chip-option class="overflow-hidden">Nómada</mat-chip-option>
-              <mat-chip-option class="overflow-hidden">Bárbara</mat-chip-option>
-              <mat-chip-option class="overflow-hidden">Primitiva</mat-chip-option>
-            </mat-chip-listbox>
-          </div>
-        </mat-step>
-        <mat-step>
-          <ng-template matStepLabel>Clase social</ng-template>
-          <div class="inline-block w-full px-2">
-            <mat-chip-listbox class="mat-mdc-chip-set-stacked mb-2">
-              <mat-chip-option class="overflow-hidden" selected
-                >Governante</mat-chip-option
-              >
-              <mat-chip-option class="overflow-hidden" 
-                >Hombre libre</mat-chip-option
-              >
-              <mat-chip-option class="overflow-hidden"
-                >Esclavo</mat-chip-option
-              >
-              <mat-chip-option class="overflow-hidden"
-                >Paria</mat-chip-option
-              >
-            </mat-chip-listbox>
-          </div>
-        </mat-step>
-        <mat-step>
-          <ng-template matStepLabel>Profesión</ng-template>
-          <mat-chip-listbox class="mat-mdc-chip-set-stacked mb-2 inline-block overflow-y-scroll h-40">
-            <mat-chip-option
-              [selected]="profesion === profesiones[0]"
-              *ngFor="let profesion of profesiones"
-              class="overflow-hidden"
-              >{{ profesion }}</mat-chip-option
-            >
-          </mat-chip-listbox>
-        </mat-step>
-      
-      </mat-vertical-stepper>
-      <div>
-        <button mat-button matStepperPrevious>Atrás</button>
-        <button mat-button matStepperNext>Siguiente</button>
-      </div>
-    </mat-step>
+
     <mat-step>
       <ng-template matStepLabel>Finalizar</ng-template>
       <p>You are now done.</p>

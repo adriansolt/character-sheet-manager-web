@@ -5,14 +5,14 @@ export enum COMPLEXIÓN {
 }
 
 export enum CULTURA {
-    Bárbara = 'Bárbara',
     Civilizada = 'Civilizada',
-    Nómada = 'Nómada',
-    Primitiv = 'Primitiva'
+    Nomada = 'Nómada',
+    Barbara = 'Bárbara',
+    Primitiva = 'Primitiva'
 }
 
 export enum PROFESION {
-    Acompañante = 'Acompañante',
+    Asistente = 'Asistente',
     AdAnimales = 'Ad. animales',
     Agente = 'Agente',
     Alquimista = 'Alquimista',
@@ -38,8 +38,42 @@ export enum PROFESION {
     Sacerdote = 'Sacerdote',
 }
 
-export enum CLASE_SOCIAL {
+export enum PRONOMBRE {
+    Ella = 'Ella',
+    El = 'Él',
+    Elle = 'Elle'
+}
+
+export enum CLASE_SOCIAL_NOMADA {
     Paria = 'Paria',
     Esclavo = 'Esclavo',
-    HombreLibre = 'Hombre libre'
+    HombreLibre = 'Hombre libre',
+    Gobernante = 'Gobernante'
+}
+
+export enum CLASE_SOCIAL_BARBARA  {
+    Paria = 'Paria',
+    Esclavo = 'Esclavo',
+    HombreLibre = 'Hombre libre',
+    Burguesía = 'Burguesía',
+    Gobernante = 'Gobernante'
+}
+
+export enum CLASE_SOCIAL_CIVILIZADA {
+    Paria = 'Paria',
+    Esclavo = 'Esclavo',
+    HombreLibre = 'Hombre libre',
+    Burguesía = 'Burguesía',
+    Aristocracia = 'Aristocracia',
+    Gobernante = 'Gobernante'
+}
+
+export enum CLASE_SOCIAL_PRIMITIVA {
+    Paria = 'Paria',
+    HombreLibre = 'Hombre libre',
+    Gobernante = 'Gobernante'
+}
+
+export enum HABILIDADES_PROFESIONALES_NOMADA {
+    
 }

@@ -1,66 +1,66 @@
 import { Component } from '@angular/core';
-import { CHARACTERISTIC } from '../../models/characteristic';
+import { NOMBRE_CARACTERISTICA } from '../../models/characteristic';
 
-export const CHARACTERISTIC_LIST = {
+export const listaCaracteristicas = {
   FUE: {
-    name: CHARACTERISTIC.Fuerza,
-    value: {
-      initial: 10,
-      current: 10,
+    nombre: NOMBRE_CARACTERISTICA.Fuerza,
+    valor: {
+      inicial: 10,
+      actual: 10,
       min: 3,
       max: 18,
     },
   },
   CON: {
-    name: CHARACTERISTIC.Constitucion,
-    value: {
-      initial: 10,
-      current: 10,
+    nombre: NOMBRE_CARACTERISTICA.Constitucion,
+    valor: {
+      inicial: 10,
+      actual: 10,
       min: 3,
       max: 18,
     },
   },
   TAM: {
-    name: CHARACTERISTIC.Tamano,
-    value: {
-      initial: 10,
-      current: 10,
+    nombre: NOMBRE_CARACTERISTICA.Tamano,
+    valor: {
+      inicial: 10,
+      actual: 10,
       min: 8,
       max: 18,
     },
   },
   DES: {
-    name: CHARACTERISTIC.Destreza,
-    value: {
-      initial: 10,
-      current: 10,
+    nombre: NOMBRE_CARACTERISTICA.Destreza,
+    valor: {
+      inicial: 10,
+      actual: 10,
       min: 3,
       max: 18,
     },
   },
   INT: {
-    name: CHARACTERISTIC.Inteligencia,
-    value: {
-      initial: 10,
-      current: 10,
+    nombre: NOMBRE_CARACTERISTICA.Inteligencia,
+    valor: {
+      inicial: 10,
+      actual: 10,
       min: 8,
       max: 18,
     },
   },
   POD: {
-    name: CHARACTERISTIC.Poder,
-    value: {
-      initial: 10,
-      current: 10,
+    nombre: NOMBRE_CARACTERISTICA.Poder,
+    valor: {
+      inicial: 10,
+      actual: 10,
       min: 3,
       max: 18,
     },
   },
   CAR: {
-    name: CHARACTERISTIC.Carisma,
-    value: {
-      initial: 10,
-      current: 10,
+    nombre: NOMBRE_CARACTERISTICA.Carisma,
+    valor: {
+      inicial: 10,
+      actual: 10,
       min: 3,
       max: 18,
     },
@@ -75,5 +75,5 @@ export const CHARACTERISTIC_LIST = {
 })
 export class CharacterSheetCharacteristicsComponent {
   displayedColumns: string[] = ['characteristic', 'initial', 'current'];
-  dataSource = Object.values(CHARACTERISTIC_LIST);
+  dataSource = Object.values(listaCaracteristicas);
 }

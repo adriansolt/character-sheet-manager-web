@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CLASE_SOCIAL, COMPLEXIÓN, CULTURA, PROFESION } from '../../models/additional-info';
+import { CLASE_SOCIAL_BARBARA, COMPLEXIÓN, CULTURA, PROFESION } from '../../models/additional-info';
 
 @Component({
   selector: 'character-sheet-additional-info',
@@ -10,5 +10,5 @@ export class CharacterSheetAdditionalInfoComponent {
   complexiones: COMPLEXIÓN[] = Object.values(COMPLEXIÓN) as COMPLEXIÓN[];
   culturas: CULTURA[] = Object.values(CULTURA) as CULTURA[];
   profesiones: PROFESION[] = Object.values(PROFESION) as PROFESION[];
-  clases_sociales: CLASE_SOCIAL[] = Object.values(CLASE_SOCIAL) as CLASE_SOCIAL[];
+  clases_sociales: CLASE_SOCIAL_BARBARA[] = Object.values(CLASE_SOCIAL_BARBARA);
 }

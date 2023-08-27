@@ -1,16 +1,16 @@
-export class Characteristic {
-    name: CHARACTERISTIC;
-    value: Value;
+export class Caracteristica {
+    nombre: NOMBRE_CARACTERISTICA;
+    valor: Valor;
 }
 
-class Value {
-    initial: number;
-    current: number;
+class Valor {
+    inicial: number;
+    actual: number;
     max: number;
     min: number
 }
 
-export enum CHARACTERISTIC {
+export enum NOMBRE_CARACTERISTICA {
     Fuerza = 'Fuerza',
     Constitucion = 'Constitución',
     Tamano = 'Tamaño',

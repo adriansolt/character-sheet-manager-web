@@ -3,7 +3,7 @@ import { Attribute } from '../../models/attribute';
 
 const ATTRIBUTE_LIST: Attribute[] = [
   {
-    name: 'Puntos de acción',
+    nombre: 'Puntos de acción',
     value: {
       initial: 10,
       current: 10,
@@ -12,7 +12,7 @@ const ATTRIBUTE_LIST: Attribute[] = [
     },
   },
   {
-    name: 'Modif. Daño',
+    nombre: 'Modif. Daño',
     value: {
       initial: 10,
       current: 10,
@@ -21,7 +21,7 @@ const ATTRIBUTE_LIST: Attribute[] = [
     },
   },
   {
-    name: 'Modif. exp.',
+    nombre: 'Modif. exp.',
     value: {
       initial: 10,
       current: 10,
@@ -30,7 +30,7 @@ const ATTRIBUTE_LIST: Attribute[] = [
     },
   },
   {
-    name: 'Ritmo curación',
+    nombre: 'Ritmo curación',
     value: {
       initial: 10,
       current: 10,
@@ -39,7 +39,7 @@ const ATTRIBUTE_LIST: Attribute[] = [
     },
   },
   {
-    name: 'Bonif. iniciativa',
+    nombre: 'Bonif. iniciativa',
     value: {
       initial: 10,
       current: 10,
@@ -48,7 +48,7 @@ const ATTRIBUTE_LIST: Attribute[] = [
     },
   },
   {
-    name: 'Puntos de suerte',
+    nombre: 'Puntos de suerte',
     value: {
       initial: 10,
       current: 10,
@@ -57,7 +57,7 @@ const ATTRIBUTE_LIST: Attribute[] = [
     },
   },
   {
-    name: 'Tasa de movimiento (m)',
+    nombre: 'Tasa de movimiento (m)',
     value: {
       initial: 10,
       current: 10,
