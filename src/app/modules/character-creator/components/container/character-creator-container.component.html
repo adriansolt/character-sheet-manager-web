@@ -4,7 +4,7 @@
       <ng-template matStepLabel>Datos personales del personaje</ng-template>
       <mat-form-field class="sm:w-1/2 sm:px-5">
         <mat-label>Nombre</mat-label>
-        <input [(ngModel)]="nombre" matInput required />
+        <input [(ngModel)]="nombre" matInput required/>
         <button
           *ngIf="nombre"
           matSuffix
@@ -17,7 +17,7 @@
       </mat-form-field>
       <mat-form-field class="sm:w-1/2 sm:px-5">
         <mat-label>Altura (cm)</mat-label>
-        <input [(ngModel)]="altura" matInput required type="number" />
+        <input [(ngModel)]="altura" matInput required type="number"/>
         <button
           *ngIf="altura"
           matSuffix
@@ -30,7 +30,7 @@
       </mat-form-field>
       <mat-form-field class="sm:w-1/2 sm:px-5">
         <mat-label>Edad (años)</mat-label>
-        <input [(ngModel)]="edad" matInput required type="number" />
+        <input [(ngModel)]="edad" matInput required type="number"/>
         <button
           *ngIf="edad"
           matSuffix
@@ -43,7 +43,7 @@
       </mat-form-field>
       <mat-form-field class="sm:w-1/2 sm:px-5">
         <mat-label>Peso (kg)</mat-label>
-        <input [(ngModel)]="peso" matInput required type="number" />
+        <input [(ngModel)]="peso" matInput required type="number"/>
         <button
           *ngIf="peso"
           matSuffix
@@ -63,65 +63,71 @@
       <div class="w-full sm:w-1/2 sm:pr-5 inline-block">
         <div>
           <mat-label
-            >¿Cuánto peso puede levantar, qué duro puede golpear?</mat-label
+          >¿Cuánto peso puede levantar, qué duro puede golpear?
+          </mat-label
           >
         </div>
         <div>
           <mat-slider class="m-0 w-full">
-            <input value="50" matSliderThumb #slider />
+            <input value="50" matSliderThumb #slider/>
           </mat-slider>
         </div>
       </div>
       <div class="w-full sm:w-1/2 sm:pl-5 inline-block">
         <div>
           <mat-label
-            >¿Cómo es la salud y la resistencia del personaje?</mat-label
+          >¿Cómo es la salud y la resistencia del personaje?
+          </mat-label
           >
         </div>
         <mat-slider class="m-0 w-full">
-          <input value="50" matSliderThumb #slider />
+          <input value="50" matSliderThumb #slider/>
         </mat-slider>
       </div>
       <div class="w-full sm:w-1/2 sm:pr-5 inline-block">
         <div>
           <mat-label
-            >¿Qué nivel de agilidad, equilibrio y reflejos tiene?</mat-label
+          >¿Qué nivel de agilidad, equilibrio y reflejos tiene?
+          </mat-label
           >
         </div>
         <mat-slider class="m-0 w-full">
-          <input value="50" matSliderThumb #slider />
+          <input value="50" matSliderThumb #slider/>
         </mat-slider>
       </div>
       <div class="w-full sm:w-1/2 sm:pl-5 inline-block">
         <div>
           <mat-label
-            >¿Cómo de buena es su habilidad para procesar
-            información?</mat-label
+          >¿Cómo de buena es su habilidad para procesar
+            información?
+          </mat-label
           >
         </div>
         <mat-slider class="m-0 w-full">
-          <input value="50" matSliderThumb #slider />
+          <input value="50" matSliderThumb #slider/>
         </mat-slider>
       </div>
       <div class="w-full sm:w-1/2 sm:pr-5 inline-block">
         <div>
           <mat-label
-            >¿Cuánto de fuerte es su espíritu y fuerza interior?</mat-label
+          >¿Cuánto de fuerte es su espíritu y fuerza interior?
+          </mat-label
           >
         </div>
         <mat-slider class="m-0 w-full">
-          <input value="50" matSliderThumb #slider />
+          <input value="50" matSliderThumb #slider/>
         </mat-slider>
       </div>
       <div class="w-full sm:w-1/2 sm:pl-5 inline-block">
         <div>
           <mat-label
-            >¿Cómo es su capacidad de atraer, cautivar e influir en los
-            demás?</mat-label
+          >¿Cómo es su capacidad de atraer, cautivar e influir en los
+            demás?
+          </mat-label
           >
         </div>
         <mat-slider class="m-0 w-full">
-          <input value="50" matSliderThumb #slider />
+          <input value="50" matSliderThumb #slider/>
         </mat-slider>
       </div>
       <div>
@@ -143,12 +149,14 @@
               class="overflow-hidden"
               [selected]="i == 0"
               [value]="c"
-              >{{ c }}
+            >{{ c }}
               <mat-icon
                 (click)="openDialog($event, c)"
                 class="absolute scale-90 right-2 top-1"
-                >info</mat-icon
-              ></mat-chip-option
+              >info
+              </mat-icon
+              >
+            </mat-chip-option
             >
           </mat-chip-listbox>
         </div>
@@ -165,12 +173,14 @@
               class="overflow-hidden"
               [selected]="i == 0"
               [value]="claseSocial"
-              >{{ claseSocial }}
+            >{{ claseSocial }}
               <mat-icon
                 class="absolute scale-90 right-2 top-1"
                 (click)="openDialog($event, claseSocial)"
-                >info</mat-icon
-              ></mat-chip-option
+              >info
+              </mat-icon
+              >
+            </mat-chip-option
             >
           </mat-chip-listbox>
         </div>
@@ -188,12 +198,14 @@
               [selected]="i == 0"
               [value]="profesion"
               class="overflow-hidden"
-              >{{ profesion }}
+            >{{ profesion }}
               <mat-icon
                 class="absolute scale-90 right-2 top-1"
                 (click)="openDialog($event, profesion)"
-                >info</mat-icon
-              ></mat-chip-option
+              >info
+              </mat-icon
+              >
+            </mat-chip-option
             >
           </div>
         </mat-chip-listbox>
@@ -217,53 +229,56 @@
           costumbres. Asi que algunas habilidades dejarán de estar disponibles
           una vez inviertas en otras.
         </div>
-        <div class="inline-block align-top">
-          <div
-            *ngFor="
-              let habilidad of habilidadesBasicas
-                | cultureAbilitiesWithoutChoices : cultura
-            "
-          >
-            <mat-icon
-              (click)="openDialog($event, habilidad.nombre)"
-              class="scale-90 align-middle"
-              >info</mat-icon
-            >
-            <div class="ml-2 inline-block">
-              <label>{{ habilidad.nombre }}</label>
-              <mat-radio-group>
-                <mat-radio-button value="1"></mat-radio-button>
-                <mat-radio-button value="2"></mat-radio-button>
-                <mat-radio-button value="3"></mat-radio-button>
-              </mat-radio-group>
-            </div>
-          </div>
-        </div>
-        <div class="inline-block">
-          <mat-card
-            class="mb-3"
-            *ngFor="
-              let habilidad of habilidadesProfesionales
-                | cultureAbilitiesWithoutChoices : cultura
-            "
-          >
-            <mat-card-content class="p-1">
-              <mat-icon
-                (click)="openDialog($event, habilidad.nombre)"
-                class="scale-90 align-middle"
-                >info</mat-icon
-              >
-              <div class="ml-2 inline-block">
-                <label>{{ habilidad.nombre }}</label>
-                <mat-radio-group class="items-end">
-                  <mat-radio-button value="1"></mat-radio-button>
-                  <mat-radio-button value="2"></mat-radio-button>
-                  <mat-radio-button value="3"></mat-radio-button>
-                </mat-radio-group>
+        <mat-card class="align-top w-1/2 inline-block">
+          <mat-card-content>
+            <div *ngFor="let habilidad of habilidadesBasicas | cultureAbilitiesWithoutChoices : cultura">
+              <div class="flex items-center justify-between">
+                <div>
+                  <mat-icon
+                    (click)="openDialog($event, habilidad.nombre)"
+                    class="scale-90 align-middle mr-1"
+                  >info
+                  </mat-icon
+                  >
+                  <label>{{ habilidad.nombre }}</label>
+                </div>
+                <div>
+                  <mat-radio-group [color]="'primary'" class="items-end">
+                    <mat-radio-button [color]="'warn'" value="1"></mat-radio-button>
+                    <mat-radio-button value="2"></mat-radio-button>
+                    <mat-radio-button value="3"></mat-radio-button>
+                    <mat-radio-button value="4"></mat-radio-button>
+                  </mat-radio-group>
+                </div>
               </div>
-            </mat-card-content>
-          </mat-card>
-        </div>
+            </div>
+          </mat-card-content>
+        </mat-card>
+        <mat-card class="align-top w-1/2 inline-block">
+          <mat-card-content>
+            <div *ngFor="let habilidad of habilidadesProfesionales | cultureAbilitiesWithoutChoices : cultura">
+              <div class="flex items-center justify-between">
+                <div>
+                  <mat-icon
+                    (click)="openDialog($event, habilidad.nombre)"
+                    class="scale-90 align-middle mr-1"
+                  >info
+                  </mat-icon
+                  >
+                  <label>{{ habilidad.nombre }}</label>
+                </div>
+                <div>
+                  <mat-radio-group [color]="'primary'" class="items-end">
+                    <mat-radio-button [color]="'warn'" value="1"></mat-radio-button>
+                    <mat-radio-button value="2"></mat-radio-button>
+                    <mat-radio-button value="3"></mat-radio-button>
+                    <mat-radio-button value="4"></mat-radio-button>
+                  </mat-radio-group>
+                </div>
+              </div>
+            </div>
+          </mat-card-content>
+        </mat-card>
         <div>
           <button mat-button matStepperPrevious>Atrás</button>
           <button mat-button matStepperNext>Siguiente</button>
