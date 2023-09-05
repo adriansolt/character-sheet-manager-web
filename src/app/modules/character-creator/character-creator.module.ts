@@ -5,9 +5,11 @@ import { CharacterCreatorContainerComponent } from './components/container/chara
 import { CharacterCreatorCultureAbilitiesWithoutChoicesPipe } from './pipes/culture-abilities-without-choices/character-creator-culture-abilities.pipe';
 import { CharacterCreatorCultureAbilities1ChoicesPipe } from './pipes/culture-abilities-1-choices/character-creator-culture-abilities-1-choices.pipe';
 import { CharacterCreatorCultureAbilities2ChoicesPipe } from './pipes/culture-abilities-2-choices/character-creator-culture-abilities-2-choices.pipe';
+import { CharacterCreatorAbilitiesComponent } from "./components/abilities/character-creator-abilities.component";
 
 const components = [
   CharacterCreatorContainerComponent,
+  CharacterCreatorAbilitiesComponent,
   CharacterCreatorCultureAbilitiesWithoutChoicesPipe,
   CharacterCreatorCultureAbilities1ChoicesPipe,
   CharacterCreatorCultureAbilities2ChoicesPipe

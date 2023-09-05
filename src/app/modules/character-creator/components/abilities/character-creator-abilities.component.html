@@ -1,0 +1,25 @@
+<div class="">
+  <div class="w-full sm:w-1/3 inline-block" *ngFor="let habilidad of habilidades | cultureAbilitiesWithoutChoices : cultura">
+    <mat-card class="m-1">
+      <mat-card-content>
+        <div class="ability-label ml-1">
+          <mat-icon
+            (click)="emitDialogInfo({event: $event, info: habilidad.nombre})"
+            class="scale-90 align-middle mr-1"
+          >info
+          </mat-icon
+          >
+          <label>{{ habilidad.nombre }}</label>
+        </div>
+        <div>
+          <mat-radio-group [color]="'primary'" class="items-end">
+            <mat-radio-button checked [color]="'warn'" value="1"></mat-radio-button>
+            <mat-radio-button value="2"></mat-radio-button>
+            <mat-radio-button value="3"></mat-radio-button>
+            <mat-radio-button value="4"></mat-radio-button>
+          </mat-radio-group>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

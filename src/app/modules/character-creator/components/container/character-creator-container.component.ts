@@ -24,12 +24,14 @@ import { Habilidad } from 'src/app/modules/character-sheet/models/ability';
 })
 export class CharacterCreatorContainerComponent {
   profesiones: PROFESION[] = Object.values(PROFESION);
+  profesion: PROFESION = PROFESION.Asistente;
   nombre = '';
   edad = '';
   altura = '';
   peso = '';
   cultura: CULTURA = CULTURA.Civilizada;
   culturas: CULTURA[] = Object.values(CULTURA);
+  claseSocial: string = CLASE_SOCIAL_CIVILIZADA.Paria;
   habilidadesBasicas =  habilidadesBasicas;
   habilidadesProfesionales = habilidadesProfesionales;
 
